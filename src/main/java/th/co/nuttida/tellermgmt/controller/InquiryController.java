@@ -1,8 +1,8 @@
-package th.co.nuttida.docmgmt.controller;
+package th.co.nuttida.tellermgmt.controller;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import th.co.nuttida.docmgmt.domain.InqResponse;
+import th.co.nuttida.tellermgmt.domain.InqResponse;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

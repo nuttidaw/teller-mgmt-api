@@ -1,4 +1,4 @@
-package th.co.nuttida.docmgmt;
+package th.co.nuttida.tellermgmt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

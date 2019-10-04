@@ -1,4 +1,4 @@
-package th.co.nuttida.docmgmt.domain;
+package th.co.nuttida.tellermgmt.domain;
 
 public class InqResponse {
 

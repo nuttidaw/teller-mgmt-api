@@ -1,4 +1,4 @@
-package th.co.nuttida.docmgmt.config;
+package th.co.nuttida.tellermgmt.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
