@@ -18,6 +18,7 @@ import lombok.Data;
 public class TypeTeller implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "type_teller_id")

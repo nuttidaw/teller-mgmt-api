@@ -21,6 +21,7 @@ import lombok.Data;
 public class District implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "district_id")
@@ -34,10 +35,10 @@ public class District implements Serializable {
 	@Column(name = "district_name_eng")
 	private String districtNameEng;
 
-	@OneToOne(mappedBy = "province", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToOne(mappedBy = "province_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Province province;
 
-	@OneToOne(mappedBy = "zone", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToOne(mappedBy = "zone_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Zone zone;
 
 	public District() {
