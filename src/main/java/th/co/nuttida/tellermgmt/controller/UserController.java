@@ -21,7 +21,7 @@ import th.co.nuttida.tellermgmt.service.UserService;
 
 @RestController
 @RequestMapping("/api/v1/tellermgmt/user")
-@Api(value = "Teller Management System", description = "User")
+@Api(value = "Teller Management System", description = "User Controller")
 public class UserController {
 	@Autowired
     private UserService userService;

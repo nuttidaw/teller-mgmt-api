@@ -20,7 +20,7 @@ import th.co.nuttida.tellermgmt.service.LogBookService;
 
 @RestController
 @RequestMapping("/api/v1/tellermgmt/logbook")
-@Api(value = "Teller Management System", description = "LogBook Teller Controller")
+@Api(value = "Teller Management System", description = "LogBook Controller")
 public class LogBookController {
 
 	@Autowired

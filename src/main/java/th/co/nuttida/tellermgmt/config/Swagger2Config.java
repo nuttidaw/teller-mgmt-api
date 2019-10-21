@@ -23,8 +23,8 @@ public class Swagger2Config {
 	}
 
 	private ApiInfo apiEndPointsInfo() {
-		return new ApiInfoBuilder().title("Teller Management Application")
-				.description("Teller Management Application")
+		return new ApiInfoBuilder().title("Teller Management System")
+				.description("Teller Management System")
 				.licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html").version("1.0.0").build();
 	}
 }
