@@ -8,15 +8,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import th.co.nuttida.tellermgmt.controller.Zone;
+import th.co.nuttida.tellermgmt.domain.Zone;
 
 @Repository
-public interface ZoneRepository extends JpaRepository<Zone, Integer>, JpaSpecificationExecutor<Zone> {
+public interface ZoneRepository extends JpaRepository<Zone, Long> {
 
-	@Override
-	List<Zone> findAll();
-
-	@Query("SELECT r FROM zone r WHERE r.zone_id = :zone_id")
-	Zone findOneById(@Param("zone_id") String id);
+	// @Override
+	// List<Zone> findAll();
+	//
+	// @Query("SELECT * FROM zone WHERE zone.zone_id = :zone_id")
+	// Zone findById(@Param("zone_id") String id);
 
 }

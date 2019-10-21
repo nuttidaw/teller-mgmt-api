@@ -8,14 +8,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import th.co.nuttida.tellermgmt.controller.Teller;
+import th.co.nuttida.tellermgmt.domain.Teller;
 
 @Repository
-public interface TellerRepository extends JpaRepository<Teller, Integer>, JpaSpecificationExecutor<Teller> {
+public interface TellerRepository extends JpaRepository<Teller, Long> {
 
-	@Override
-	List<Teller> findAll();
-
-	@Query("SELECT r FROM teller r WHERE r.teller_id = :teller_id")
-	Teller findOneById(@Param("teller_id") String id);
+//	@Override
+//	List<Teller> findAll();
+//
+//	@Query("SELECT * FROM teller WHERE teller.teller_id = :teller_id")
+//	Teller findById(@Param("teller_id") String id);
 }

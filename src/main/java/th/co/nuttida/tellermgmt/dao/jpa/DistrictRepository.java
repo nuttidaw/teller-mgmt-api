@@ -8,15 +8,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import th.co.nuttida.tellermgmt.controller.District;
+import th.co.nuttida.tellermgmt.domain.District;
 
 @Repository
-public interface DistrictRepository extends JpaRepository<District, Integer>, JpaSpecificationExecutor<District> {
+public interface DistrictRepository extends JpaRepository<District, Long> {
 
-	@Override
-	List<District> findAll();
-	
-	@Query("SELECT r FROM district r WHERE r.district_id = :district_id")
-	District findOneById(@Param("district_id") String id);
+//	@Override
+//	List<District> findAll();
+//	
+//	@Query("SELECT * FROM district WHERE district.district_id = :district_id")
+//	District findById(@Param("district_id") String id);
 
 }

@@ -8,15 +8,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import th.co.nuttida.tellermgmt.controller.TellerDetails;
+import th.co.nuttida.tellermgmt.domain.TellerDetails;
 
 @Repository
 public interface TellerDetailsRepository
-		extends JpaRepository<TellerDetails, Integer>, JpaSpecificationExecutor<TellerDetails> {
+		extends JpaRepository<TellerDetails, Long> {
 
-	@Override
-	List<TellerDetails> findAll();
-
-	@Query("SELECT r FROM teller_details r WHERE r.teller_details_id = :teller_details_id")
-	TellerDetails findOneById(@Param("teller_details_id") String id);
+//	@Override
+//	List<TellerDetails> findAll();
+//
+//	@Query("SELECT * FROM teller_details WHERE teller_details.teller_details_id = :teller_details_id")
+//	TellerDetails findById(@Param("teller_details_id") String id);
 }
