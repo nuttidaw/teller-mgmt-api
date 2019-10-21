@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DocumentManagementApplication {
+public class TellerManagementApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DocumentManagementApplication.class, args);
+		SpringApplication.run(TellerManagementApplication.class, args);
 	}
 }

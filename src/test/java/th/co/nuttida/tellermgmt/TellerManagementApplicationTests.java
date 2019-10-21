@@ -1,4 +1,4 @@
-package th.co.nuttida.docmgmt;
+package th.co.nuttida.tellermgmt;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DocumentManagementApplicationTests {
+public class TellerManagementApplicationTests {
 
 	@Test
 	public void contextLoads() {
