@@ -1,17 +1,13 @@
-package th.co.nuttida.tellermgmt.controller;
+package th.co.nuttida.tellermgmt.domain;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -37,19 +33,17 @@ public class LogBook implements Serializable {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+7:00")
 	private Date dateTime;
 
-	@Basic(optional = false)
 	@Column(name = "problem")
 	private String problem;
 
-	@Basic(optional = false)
 	@Column(name = "solution")
 	private String solution;
 
-	@OneToOne(mappedBy = "username", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private User user;
+	@Column(name = "username")
+	private String username;
 
-	@OneToOne(mappedBy = "teller_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Teller teller;
+	@Column(name = "teller_id")
+	private String tellerId;
 
 	public LogBook() {
 		super();
@@ -77,10 +71,58 @@ public class LogBook implements Serializable {
 		return true;
 	}
 
+	public Integer getLogBookId() {
+		return logBookId;
+	}
+
+	public void setLogBookId(Integer logBookId) {
+		this.logBookId = logBookId;
+	}
+
+	public Date getDateTime() {
+		return dateTime;
+	}
+
+	public void setDateTime(Date dateTime) {
+		this.dateTime = dateTime;
+	}
+
+	public String getProblem() {
+		return problem;
+	}
+
+	public void setProblem(String problem) {
+		this.problem = problem;
+	}
+
+	public String getSolution() {
+		return solution;
+	}
+
+	public void setSolution(String solution) {
+		this.solution = solution;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getTellerId() {
+		return tellerId;
+	}
+
+	public void setTellerId(String tellerId) {
+		this.tellerId = tellerId;
+	}
+
 	@Override
 	public String toString() {
 		return "LogBook [logBookId=" + logBookId + ", dateTime=" + dateTime + ", problem=" + problem + ", solution="
-				+ solution + ", user=" + user + ", teller=" + teller + "]";
+				+ solution + ", username=" + username + "]";
 	}
 
 }

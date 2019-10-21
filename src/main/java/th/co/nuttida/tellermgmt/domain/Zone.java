@@ -1,8 +1,7 @@
-package th.co.nuttida.tellermgmt.controller;
+package th.co.nuttida.tellermgmt.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +22,6 @@ public class Zone implements Serializable {
 	@Column(name = "zone_id")
 	private Integer zoneId;
 
-	@Basic(optional = false)
 	@Column(name = "zone_name")
 	private String zoneName;
 

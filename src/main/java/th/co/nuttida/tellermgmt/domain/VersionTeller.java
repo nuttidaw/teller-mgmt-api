@@ -1,16 +1,12 @@
-package th.co.nuttida.tellermgmt.controller;
+package th.co.nuttida.tellermgmt.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -26,15 +22,22 @@ public class VersionTeller implements Serializable {
 	@Column(name = "version_teller_id")
 	private Integer versionTellerId;
 
-	@Basic(optional = false)
 	@Column(name = "version_teller_name")
 	private String versionTellerName;
 
-	@OneToOne(mappedBy = "brand_teller_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private BrandTeller brandTeller;
+	@Column(name = "brand_teller_id")
+	private Integer brandTellerId;
 
-	@OneToOne(mappedBy = "type_teller_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private TypeTeller typeTeller;
+	@Column(name = "type_teller_id")
+	private Integer typeTellerId;
+
+	// @OneToOne(mappedBy = "brand_teller_id", cascade = CascadeType.ALL, fetch
+	// = FetchType.EAGER)
+	// private BrandTeller brandTeller;
+	//
+	// @OneToOne(mappedBy = "type_teller_id", cascade = CascadeType.ALL, fetch =
+	// FetchType.EAGER)
+	// private TypeTeller typeTeller;
 
 	public VersionTeller() {
 		super();
@@ -62,10 +65,46 @@ public class VersionTeller implements Serializable {
 		return true;
 	}
 
+	public Integer getVersionTellerId() {
+		return versionTellerId;
+	}
+
+	public void setVersionTellerId(Integer versionTellerId) {
+		this.versionTellerId = versionTellerId;
+	}
+
+	public String getVersionTellerName() {
+		return versionTellerName;
+	}
+
+	public void setVersionTellerName(String versionTellerName) {
+		this.versionTellerName = versionTellerName;
+	}
+
+	public Integer getBrandTellerId() {
+		return brandTellerId;
+	}
+
+	public void setBrandTellerId(Integer brandTellerId) {
+		this.brandTellerId = brandTellerId;
+	}
+
+	public Integer getTypeTellerId() {
+		return typeTellerId;
+	}
+
+	public void setTypeTellerId(Integer typeTellerId) {
+		this.typeTellerId = typeTellerId;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public String toString() {
 		return "VersionTeller [versionTellerId=" + versionTellerId + ", versionTellerName=" + versionTellerName
-				+ ", brandTeller=" + brandTeller + ", typeTeller=" + typeTeller + "]";
+				+ ", brandTellerId=" + brandTellerId + ", typeTellerId=" + typeTellerId + "]";
 	}
 
 }

@@ -1,16 +1,12 @@
-package th.co.nuttida.tellermgmt.controller;
+package th.co.nuttida.tellermgmt.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -20,26 +16,27 @@ import lombok.Data;
 @Table(name = "district")
 public class District implements Serializable {
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "district_id")
 	private Integer districtId;
 
-	@Basic(optional = false)
 	@Column(name = "district_name_thai")
 	private String districtNameThai;
 
-	@Basic(optional = false)
 	@Column(name = "district_name_eng")
 	private String districtNameEng;
 
-	@OneToOne(mappedBy = "province_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Province province;
+	@Column(name = "province_id")
+	private Integer provinceId;
 
-	@OneToOne(mappedBy = "zone_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Zone zone;
+	@Column(name = "zone_id")
+	private Integer zoneId;
 
 	public District() {
 		super();
@@ -67,10 +64,50 @@ public class District implements Serializable {
 		return true;
 	}
 
+	public Integer getDistrictId() {
+		return districtId;
+	}
+
+	public void setDistrictId(Integer districtId) {
+		this.districtId = districtId;
+	}
+
+	public String getDistrictNameThai() {
+		return districtNameThai;
+	}
+
+	public void setDistrictNameThai(String districtNameThai) {
+		this.districtNameThai = districtNameThai;
+	}
+
+	public String getDistrictNameEng() {
+		return districtNameEng;
+	}
+
+	public void setDistrictNameEng(String districtNameEng) {
+		this.districtNameEng = districtNameEng;
+	}
+
+	public int getProvinceId() {
+		return provinceId;
+	}
+
+	public void setProvinceId(int provinceId) {
+		this.provinceId = provinceId;
+	}
+
+	public int getZoneId() {
+		return zoneId;
+	}
+
+	public void setZoneId(int zoneId) {
+		this.zoneId = zoneId;
+	}
+
 	@Override
 	public String toString() {
 		return "District [districtId=" + districtId + ", districtNameThai=" + districtNameThai + ", districtNameEng="
-				+ districtNameEng + ", province=" + province + ", zone=" + zone + "]";
+				+ districtNameEng + ", provinceId=" + provinceId + ", zoneId=" + zoneId + "]";
 	}
 
 }

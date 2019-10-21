@@ -1,8 +1,7 @@
-package th.co.nuttida.tellermgmt.controller;
+package th.co.nuttida.tellermgmt.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +22,6 @@ public class TypeAddress implements Serializable {
 	@Column(name = "type_address_id")
 	private Integer typeAddressId;
 
-	@Basic(optional = false)
 	@Column(name = "type_address_name")
 	private String typeAddressName;
 
@@ -59,6 +57,26 @@ public class TypeAddress implements Serializable {
 			return false;
 		}
 		return true;
+	}
+
+	public Integer getTypeAddressId() {
+		return typeAddressId;
+	}
+
+	public void setTypeAddressId(Integer typeAddressId) {
+		this.typeAddressId = typeAddressId;
+	}
+
+	public String getTypeAddressName() {
+		return typeAddressName;
+	}
+
+	public void setTypeAddressName(String typeAddressName) {
+		this.typeAddressName = typeAddressName;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 }

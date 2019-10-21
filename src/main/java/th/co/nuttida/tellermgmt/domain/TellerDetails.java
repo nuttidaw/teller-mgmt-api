@@ -1,8 +1,7 @@
-package th.co.nuttida.tellermgmt.controller;
+package th.co.nuttida.tellermgmt.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,19 +23,15 @@ public class TellerDetails implements Serializable {
 	@Column(name = "teller_details_id")
 	private Integer tellerDetailsId;
 
-	@Basic(optional = false)
 	@Column(name = "ip_address")
 	private String ipAddress;
 
-	@Basic(optional = false)
 	@Column(name = "ip_gateway")
 	private String ipGateway;
 
-	@Basic(optional = false)
 	@Column(name = "service_port")
 	private String servicePort;
 
-	@Basic(optional = false)
 	@Column(name = "local_port")
 	private String localPort;
 
@@ -87,6 +82,58 @@ public class TellerDetails implements Serializable {
 		return "TellerDetails [tellerDetailsId=" + tellerDetailsId + ", ipAddress=" + ipAddress + ", ipGateway="
 				+ ipGateway + ", servicePort=" + servicePort + ", localPort=" + localPort + ", indexMasterKey="
 				+ indexMasterKey + "]";
+	}
+
+	public Integer getTellerDetailsId() {
+		return tellerDetailsId;
+	}
+
+	public void setTellerDetailsId(Integer tellerDetailsId) {
+		this.tellerDetailsId = tellerDetailsId;
+	}
+
+	public String getIpAddress() {
+		return ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+	}
+
+	public String getIpGateway() {
+		return ipGateway;
+	}
+
+	public void setIpGateway(String ipGateway) {
+		this.ipGateway = ipGateway;
+	}
+
+	public String getServicePort() {
+		return servicePort;
+	}
+
+	public void setServicePort(String servicePort) {
+		this.servicePort = servicePort;
+	}
+
+	public String getLocalPort() {
+		return localPort;
+	}
+
+	public void setLocalPort(String localPort) {
+		this.localPort = localPort;
+	}
+
+	public String getIndexMasterKey() {
+		return indexMasterKey;
+	}
+
+	public void setIndexMasterKey(String indexMasterKey) {
+		this.indexMasterKey = indexMasterKey;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 }

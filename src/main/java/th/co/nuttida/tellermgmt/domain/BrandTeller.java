@@ -1,7 +1,6 @@
-package th.co.nuttida.tellermgmt.controller;
+package th.co.nuttida.tellermgmt.domain;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,14 +14,16 @@ import lombok.Data;
 @Table(name = "branch_teller")
 public class BrandTeller implements Serializable {
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "brand_teller_id")
 	private Integer brandTellerId;
 
-	@Basic(optional = false)
 	@Column(name = "brand_teller_name")
 	private String brandTellerName;
 
@@ -63,6 +64,22 @@ public class BrandTeller implements Serializable {
 	@Override
 	public String toString() {
 		return "BrandTeller [brandTellerId=" + brandTellerId + ", brandTellerName=" + brandTellerName + "]";
+	}
+
+	public Integer getBrandTellerId() {
+		return brandTellerId;
+	}
+
+	public void setBrandTellerId(Integer brandTellerId) {
+		this.brandTellerId = brandTellerId;
+	}
+
+	public String getBrandTellerName() {
+		return brandTellerName;
+	}
+
+	public void setBrandTellerName(String brandTellerName) {
+		this.brandTellerName = brandTellerName;
 	}
 
 }
