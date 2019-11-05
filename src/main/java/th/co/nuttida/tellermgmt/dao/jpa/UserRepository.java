@@ -14,7 +14,7 @@ import th.co.nuttida.tellermgmt.domain.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	@Override
+	@Query("SELECT * FROM user")
 	List<User> findAll();
 
 	User findByUsername(String username);
