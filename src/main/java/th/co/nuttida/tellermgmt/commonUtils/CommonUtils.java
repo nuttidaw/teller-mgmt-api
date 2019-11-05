@@ -171,7 +171,6 @@ public class CommonUtils {
 	public Date getReportDate(String reportDate) throws ParseException {
 
 		Locale locale = new Locale("th", "TH");
-		Calendar cal = Calendar.getInstance();
 		DateFormat df = new SimpleDateFormat("yyMMdd", locale);
 		Date startDate;
 		startDate = df.parse(reportDate);
