@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "branch_teller")
+@Table(name = "brand_teller")
 public class BrandTeller implements Serializable {
 
 	/**
