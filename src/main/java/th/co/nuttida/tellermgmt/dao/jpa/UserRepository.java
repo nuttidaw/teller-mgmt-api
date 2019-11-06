@@ -14,20 +14,21 @@ import th.co.nuttida.tellermgmt.domain.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	@Query("SELECT * FROM user")
+//	@Query("SELECT * FROM user")
 	List<User> findAll();
 
-	User findByUsername(String username);
+	@Query(value = "FROM user u WHERE u.username = :username", nativeQuery = true)
+	User findByUsername(@Param("username") String username);
 
-	@Query(value = "SELECT * FROM user JOIN role ON role.user_id = user.user_id WHERE user.user_id = :id", nativeQuery = true)
-	User findById(@Param("id") int id);
+	@Query(value = "FROM user u WHERE u.user_id = :user_id", nativeQuery = true)
+	User findById(@Param("user_id") int userId);
 
-	@Query(value = "SELECT COUNT(id) as count_id FROM user JOIN role ON role.user_id = user.user_id WHERE user.user_id = :id", nativeQuery = true)
-	int countUser(@Param("id") int id);
+//	@Query(value = "SELECT COUNT(id) as count_id FROM user WHERE user_id = :user_id", nativeQuery = true)
+//	int countUser(@Param("user_id") int userId);
 
 	@Modifying
 	@Transactional
-	@Query(value = "DELETE user WHERE user_id = :id", nativeQuery = true)
-	void delete(@Param("id") int id);
+	@Query(value = "DELETE user WHERE user_id = :user_id", nativeQuery = true)
+	void delete(@Param("user_id") int userId);
 
 }

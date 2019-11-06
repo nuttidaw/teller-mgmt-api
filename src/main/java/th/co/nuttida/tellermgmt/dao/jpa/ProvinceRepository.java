@@ -12,9 +12,9 @@ import th.co.nuttida.tellermgmt.domain.Province;
 @Repository
 public interface ProvinceRepository extends JpaRepository<Province, Long> {
 
-	@Query("SELECT * FROM province")
+//	@Query("SELECT * FROM province")
 	List<Province> findAll();
 
-	@Query("SELECT * FROM province WHERE province.province_id = :province_id")
-	Province findById(@Param("province_id") int id);
+	@Query(value = "FROM province u WHERE u.province_id = :province_id", nativeQuery = true)
+	Province findById(@Param("province_id") int provinceId);
 }

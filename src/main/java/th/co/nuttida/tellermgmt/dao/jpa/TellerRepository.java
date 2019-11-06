@@ -12,9 +12,12 @@ import th.co.nuttida.tellermgmt.domain.Teller;
 @Repository
 public interface TellerRepository extends JpaRepository<Teller, Long> {
 
-	@Query("SELECT * FROM teller")
+//	@Query("SELECT * FROM teller")
 	List<Teller> findAll();
 
-	@Query("SELECT * FROM teller WHERE teller.teller_id = :teller_id")
-	Teller findById(@Param("teller_id") int id);
+	@Query(value = "FROM teller u WHERE u.teller_id = :teller_id", nativeQuery = true)
+	Teller findById(@Param("teller_id") int tellerId);
+	
+	@Query(value = "FROM teller u WHERE u.teller_no = :teller_no", nativeQuery = true)
+	Teller findTellerNo(@Param("teller_no") String tellerNo);
 }

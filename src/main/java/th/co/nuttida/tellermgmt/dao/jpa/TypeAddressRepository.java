@@ -12,9 +12,9 @@ import th.co.nuttida.tellermgmt.domain.TypeAddress;
 @Repository
 public interface TypeAddressRepository extends JpaRepository<TypeAddress, Long> {
 
-	@Query("SELECT * FROM type_address")
+//	@Query("SELECT * FROM type_address")
 	List<TypeAddress> findAll();
 
-	@Query("SELECT * FROM type_address WHERE type_address.type_address_id = :type_address_id")
-	TypeAddress findById(@Param("type_address_id") int id);
+	@Query(value = "FROM type_address u WHERE u.type_address_id = :type_address_id", nativeQuery = true)
+	TypeAddress findById(@Param("type_address_id") int typeAddressId);
 }

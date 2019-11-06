@@ -12,10 +12,10 @@ import th.co.nuttida.tellermgmt.domain.Zone;
 @Repository
 public interface ZoneRepository extends JpaRepository<Zone, Long> {
 
-	@Query("SELECT * FROM zone")
+//	@Query("SELECT * FROM zone")
 	List<Zone> findAll();
 
-	@Query("SELECT * FROM zone WHERE zone.zone_id = :zone_id")
-	Zone findById(@Param("zone_id") int id);
+	@Query(value = "FROM zone u WHERE u.zone_id = :zone_id", nativeQuery = true)
+	Zone findById(@Param("zone_id") int zoneId);
 
 }

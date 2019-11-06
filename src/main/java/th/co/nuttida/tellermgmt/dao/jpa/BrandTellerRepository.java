@@ -13,9 +13,9 @@ import th.co.nuttida.tellermgmt.domain.BrandTeller;
 public interface BrandTellerRepository
 		extends JpaRepository<BrandTeller, Long> {
 
-	@Query(value = "SELECT * FROM branch_teller", nativeQuery = true)
+//	@Query(value = "SELECT * FROM branch_teller", nativeQuery = true)
 	List<BrandTeller> findAll();
 	
-	@Query(value = "SELECT * FROM branch_teller WHERE branch_teller.brand_teller_id = :id", nativeQuery = true)
-    BrandTeller findById(@Param("id") int id);
+	@Query(value = "FROM branch_teller u WHERE u.brand_teller_id = :brand_teller_id", nativeQuery = true)
+    BrandTeller findById(@Param("brand_teller_id") int brandTellerId);
 }

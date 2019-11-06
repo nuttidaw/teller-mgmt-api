@@ -12,10 +12,10 @@ import th.co.nuttida.tellermgmt.domain.TypeTeller;
 @Repository
 public interface TypeTellerRepository extends JpaRepository<TypeTeller, Long> {
 
-	@Query("SELECT * FROM type_teller")
+//	@Query("SELECT * FROM type_teller")
 	List<TypeTeller> findAll();
 
-	@Query("SELECT * FROM type_teller WHERE type_teller.type_teller_id = :type_teller_id")
-	TypeTeller findById(@Param("type_teller_id") int id);
+	@Query(value = "FROM type_teller u WHERE u.type_teller_id = :type_teller_id", nativeQuery = true)
+	TypeTeller findById(@Param("type_teller_id") int typeTellerId);
 
 }

@@ -12,10 +12,10 @@ import th.co.nuttida.tellermgmt.domain.District;
 @Repository
 public interface DistrictRepository extends JpaRepository<District, Long> {
 
-	@Query("SELECT * FROM district")
+//	@Query("SELECT * FROM district")
 	List<District> findAll();
 
-	@Query("SELECT * FROM district WHERE district.district_id = :district_id")
-	District findById(@Param("district_id") int id);
+	@Query(value = "FROM district u WHERE u.district_id = :district_id", nativeQuery = true)
+	District findById(@Param("district_id") int districtId);
 
 }

@@ -13,9 +13,9 @@ import th.co.nuttida.tellermgmt.domain.TellerDetails;
 public interface TellerDetailsRepository
 		extends JpaRepository<TellerDetails, Long> {
 
-	@Query("SELECT * FROM teller_details")
+//	@Query("SELECT * FROM teller_details")
 	List<TellerDetails> findAll();
 
-	@Query("SELECT * FROM teller_details WHERE teller_details.teller_details_id = :teller_details_id")
-	TellerDetails findById(@Param("teller_details_id") int id);
+	@Query(value = "FROM teller_details u WHERE u.teller_details_id = :teller_details_id", nativeQuery = true)
+	TellerDetails findById(@Param("teller_details_id") int tellerDetailsId);
 }

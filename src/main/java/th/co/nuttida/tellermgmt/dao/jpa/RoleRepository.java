@@ -12,9 +12,9 @@ import th.co.nuttida.tellermgmt.domain.Role;
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
 
-	@Query("SELECT * FROM role")
+//	@Query("SELECT * FROM role")
 	List<Role> findAll();
 
-	@Query("SELECT * FROM role WHERE role.role_id = :role_id")
-	Role findById(@Param("role_id") int id);
+	@Query(value = "FROM role u WHERE u.role_id = :role_id", nativeQuery = true)
+	Role findById(@Param("role_id") int roleId);
 }
